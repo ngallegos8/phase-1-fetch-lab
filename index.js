@@ -1,7 +1,14 @@
 function fetchBooks() {
   // To pass the tests, don't forget to return your fetch!
-  
+  return fetch('https://anapioficeandfire.com/api/books')
+  .then(res => res.json())
+  .then(books => renderBooks(books))
 }
+
+
+
+
+//render to DOM (select where the books are at, then appendChild(card))
 
 function renderBooks(books) {
   const main = document.querySelector('main');
